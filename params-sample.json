@@ -1,20 +1,20 @@
 {
   "commentaire":"next key are required for worpress ./setup.sh",
-  "bdd_name":"wtest",
+  "bdd_name":"test",
   "bdd_user":"root",
   "bdd_pass":"root",
-  "path":"/var/www/html/wtest",
+  "path":"/var/www/html/test",
   "host":"localhost",
-  "local_sitename":"wtest",
-  "prod_sitename":"www.sraleik.fr/test",
+  "local_sitename":"test",
+  "prod_sitename":"localhost/test",
 
   "commentaire":"next key are required for ./import_bdd.sh",
   "prod_user":"sraleik",
-  "prod_domain":"192.168.1.18",
+  "prod_domain":"www.sraleik.fr",
   "prod_bdd_user":"root",
   "prod_bdd_pass":"root",
   "prod_bdd_name":"test",
   "prod_path_to_script":"/var/www/script_server",
   "prod_path_to_backup":"/var/www/bdd_backup",
-  "prod_branch":"productionTest"
+  "prod_branch":"recette"
 }
