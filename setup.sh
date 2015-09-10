@@ -16,11 +16,11 @@ host=`cat $tmp/params.json | jq -r '.host'`
 local_sitename=`cat $tmp/params.json | jq -r '.local_sitename'`
 prod_sitename=`cat $tmp/params.json | jq -r '.prod_sitename'`
 
-$path/script/create_configphp.sh $bdd_user $bdd_pass $bdd_name $host $path
+$path/vendor/sraleik/script_worpress/create_configphp.sh $bdd_user $bdd_pass $bdd_name $host $path
 
-$path/script/create_htaccess.sh $path $local_sitename $prod_sitename
+$path/vendor/sraleik/script_wordpress/create_htaccess.sh $path $local_sitename $prod_sitename
 
-$path/script/create_bddbase.sh $bdd_user $bdd_pass $bdd_name $path $local_sitename $prod_sitename
+$path/vendor/sraleik/script_wordpress/create_bddbase.sh $bdd_user $bdd_pass $bdd_name $path $local_sitename $prod_sitename
 
 
 echo -e "\n--- activation du mod a2enmod ---"
