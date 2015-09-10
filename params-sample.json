@@ -7,6 +7,7 @@
   "host":"localhost",
   "local_sitename":"test",
   "prod_sitename":"localhost/test",
+  "htaccess":"test",
 
   "commentaire":"next key are required for ./import_bdd.sh",
   "prod_user":"sraleik",
