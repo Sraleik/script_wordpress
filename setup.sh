@@ -15,10 +15,11 @@ bdd_name=`cat $tmp/params.json | jq -r '.bdd_name'`
 host=`cat $tmp/params.json | jq -r '.host'`
 local_sitename=`cat $tmp/params.json | jq -r '.local_sitename'`
 prod_sitename=`cat $tmp/params.json | jq -r '.prod_sitename'`
+htaccess_name=`cat $tmp/params.json | jq -r '.htaccess'`
 
 $path/vendor/sraleik/script_wordpress/create_configphp.sh $bdd_user $bdd_pass $bdd_name $host $path
 
-$path/vendor/sraleik/script_wordpress/create_htaccess.sh $path $local_sitename $prod_sitename
+$path/vendor/sraleik/script_wordpress/create_htaccess.sh $path $htaccess_name $prod_sitename
 
 $path/vendor/sraleik/script_wordpress/create_bddbase.sh $bdd_user $bdd_pass $bdd_name $path $local_sitename $prod_sitename
 
