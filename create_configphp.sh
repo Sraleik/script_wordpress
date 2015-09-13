@@ -8,23 +8,25 @@ path=$5
 
 echo -e "\n*** CONFIG.PHP ***"
 
-echo -e "\n--- install de curl pour installer wp-cli"
-sudo apt-get install curl -yf
+if ! type "wp" &> /dev/null; then
 
-if [ ! -f "/usr/local/bin/wp" ];then
+  if ! type "curl" &> /dev/null; then
+    echo -e "\t--- install de curl pour installer wp-cli"
+    sudo apt-get install curl -yf
+  fi
 
-echo -e "\n--- téléchargement de wp-cli ---"
-curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-chmod +x wp-cli.phar
-sudo mv wp-cli.phar /usr/local/bin/wp
-
+  echo -e "\t--- téléchargement de wp-cli ---"
+  curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+  chmod +x wp-cli.phar
+  sudo mv wp-cli.phar /usr/local/bin/wp
 else
-
-echo -e "\n--- wp-cli trouvé ---"
-
+  echo -e "\t--- wp-cli trouvé ---"
 fi
-echo -e "\n--- suppression de wp-config (si existe) ---"
-rm $path/wp-config.php
 
-echo -e "\n--- création de wp-config.php ---"
+if [ -f "$path/wp-config.php" ];then
+  echo -e "\t--- suppression de wp-config ---"
+  rm $path/wp-config.php
+fi
+
+echo -e "\t--- création de wp-config.php ---"
 wp core config --dbname=$dbname --dbuser=$user --dbpass=$mdp --dbhost=$host --allow-root

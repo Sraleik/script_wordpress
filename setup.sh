@@ -2,10 +2,10 @@
 
 tmp=`pwd`
 
-
-echo -e "\n--- install de jq pour traiter le fichier params.json\n"
-sudo apt-get install jq -yf
-
+if ! type "jq" &> /dev/null; then
+  echo -e "\n--- install de jq pour traiter le fichier params.json\n"
+  sudo apt-get install jq -yf
+fi
 
 
 path=`cat $tmp/params.json | jq -r '.path'`
