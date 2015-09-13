@@ -42,6 +42,6 @@ echo "ya quelqu'un? => $filename"
 wp db import $filename --allow-root
 
 echo -e "\n--- lancement de search-replace ---"
-wp search-replace "://$prod_sitename" "://localhost/$local_sitename" --allow-root
+wp search-replace "://$prod_sitename" "://$local_sitename" --allow-root
 
 
