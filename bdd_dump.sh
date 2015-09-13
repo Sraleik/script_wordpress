@@ -13,9 +13,7 @@ branch=$5
 
 date=`date +"%d-%m-%Y-%T"`
 
-filename="$bddName"
-filename+="_$branch"
-filename+="_$date.sql"
+filename=${bddName}_${branch}_$date.sql
 
 echo "creating =>  $filename"
 
