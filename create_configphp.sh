@@ -11,11 +11,18 @@ echo -e "\n*** CONFIG.PHP ***"
 echo -e "\n--- install de curl pour installer wp-cli"
 sudo apt-get install curl -yf
 
+if [ ! -f "/usr/local/bin/wp" ];then
+
 echo -e "\n--- téléchargement de wp-cli ---"
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 chmod +x wp-cli.phar
 sudo mv wp-cli.phar /usr/local/bin/wp
 
+else
+
+echo -e "\n--- wp-cli trouvé ---"
+
+fi
 echo -e "\n--- suppression de wp-config (si existe) ---"
 rm $path/wp-config.php
 
