@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 path=$1
 local_name=$2
 prod_name=$3

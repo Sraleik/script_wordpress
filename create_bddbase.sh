@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 user=$1
 pass=$2
