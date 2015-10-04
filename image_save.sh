@@ -2,7 +2,7 @@
 
 date=`date +"%d-%m-%Y-%T"`
 
-cd /var/www/script_server/sing-sing-bis/wp-content
+cd /var/www/sing-sing-bis/wp-content
 
 filename=uploads_${date}
 
