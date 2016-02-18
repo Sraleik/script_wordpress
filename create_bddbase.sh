@@ -22,7 +22,7 @@ fi
 
 echo -e "\t--- dezip de la bdd de base ---"
 cd $path/vendor/sraleik/script_wordpress/bdd/
-gzip -d bdd_17_02_2016.gz
+gzip -dk bdd_17_02_2016.gz
 
 cd $path
 
