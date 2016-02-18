@@ -1,13 +1,13 @@
 {
   "commentaire":"next key are required for worpress ./setup.sh",
-  "bdd_name":"test",
+  "bdd_name":"marsault",
   "bdd_user":"root",
   "bdd_pass":"root",
-  "path":"/var/www/html/test",
+  "path":"/var/www/html/marsault",
   "host":"localhost",
-  "local_sitename":"test",
-  "prod_sitename":"localhost/test",
-  "htaccess":"test",
+  "local_sitename":"localhost/marsault",
+  "prod_sitename":"marsault.net/",
+  "htaccess":"marsault",
 
   "commentaire":"next key are required for ./import_bdd.sh",
   "prod_user":"sraleik",

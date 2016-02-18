@@ -15,8 +15,19 @@ wp db drop --yes --allow-root
 echo -e "\t--- création de la bdd vide ---"
 wp db create --allow-root
 
+if ! type "gzip" &> /dev/null; then
+  echo -e "\t--- install de gzip pour dezip la bdd"
+  sudo apt-get install gzip -yf
+fi
+
+echo -e "\t--- dezip de la bdd de base ---"
+cd $path/vendor/sraleik/script_wordpress/bdd/
+gzip -d bdd_17_02_2016.gz
+
+cd $path
+
 echo -e "\t--- importation d'une bdd vide wordpress ---"
-wp db import $path/vendor/sraleik/script_wordpress/bdd/base.sql --allow-root
+wp db import $path/vendor/sraleik/script_wordpress/bdd/bdd_17_02_2016 --allow-root
 
 echo -e "\t--- lancement de search-replace ---"
 wp search-replace "://localhost/wordpress" "://$local_sitename" --allow-root
