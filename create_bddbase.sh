@@ -30,4 +30,4 @@ echo -e "\t--- importation d'une bdd vide wordpress ---"
 wp db import $path/vendor/sraleik/script_wordpress/bdd/bdd_17_02_2016 --allow-root
 
 echo -e "\t--- lancement de search-replace ---"
-wp search-replace "://localhost/wordpress" "://$local_sitename" --allow-root
+wp search-replace "marsault.net" "://$local_sitename" --allow-root
