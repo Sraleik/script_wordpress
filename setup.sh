@@ -24,10 +24,10 @@ $path/vendor/sraleik/script_wordpress/create_htaccess.sh $path $htaccess_name $p
 $path/vendor/sraleik/script_wordpress/create_bddbase.sh $bdd_user $bdd_pass $bdd_name $path $local_sitename $prod_sitename
 
 
-echo -e "\n--- activation du mod a2enmod ---"
-sudo a2enmod rewrite
+# echo -e "\n--- activation du mod a2enmod ---"
+# sudo a2enmod rewrite
 
-echo -e "\n--- apache restart --"
-sudo service apache2 stop
-sudo service apache2 start
+# echo -e "\n--- apache restart --"
+# sudo service apache2 stop
+# sudo service apache2 start
 

@@ -20,28 +20,17 @@ prod_path_to_script=`cat $tmp/params.json | jq -r '.prod_path_to_script'`
 prod_path_to_backup=`cat $tmp/params.json | jq -r '.prod_path_to_backup'`
 prod_branch=`cat $tmp/params.json | jq -r '.prod_branch'`
 
-echo -e "$prod_path_to_script/bdd_dump.sh"
-
-date=`date +"%d-%m-%Y-%H:%M"`
-
-filename="$prod_bdd_name"
-filename+="_$prod_branch"
-filename+="_$date"
-
-echo "futur => $filename"
-
-ssh $prod_user@$prod_domain "$prod_path_to_script/bdd_dump.sh $prod_bdd_user $prod_bdd_pass $prod_bdd_name $prod_path_to_backup $prod_branch"
+curl www.sraleik.fr:1111/recette
 
 sleep 1
 
-scp $prod_user@$prod_domain:$prod_path_to_backup/$filename* /tmp/
+curl -o /tmp/singsingbis_recette_bdd.sql www.sraleik.fr:1111/singsingbis_recette_bdd.sql
 
-filename=`ls /tmp/$filename*`
+filename=/tmp/singsingbis_recette_bdd.sql
+
 echo "ya quelqu'un? => $filename"
 
 wp db import $filename --allow-root
 
 echo -e "\n--- lancement de search-replace ---"
 wp search-replace "://$prod_sitename" "://$local_sitename" --allow-root
-
-
