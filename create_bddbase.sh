@@ -19,4 +19,4 @@ echo -e "\t--- importation d'une bdd vide wordpress ---"
 wp db import $path/vendor/sraleik/script_wordpress/bdd/base.sql --allow-root
 
 echo -e "\t--- lancement de search-replace ---"
-wp search-replace "://localhost/wordpress" "://$local_sitename" --allow-root
+wp search-replace "://www.sraleik.fr/sing-sing-bis-recette" "://$local_sitename" --allow-root
